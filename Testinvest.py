@@ -1,7 +1,7 @@
 def comparePayoffs(amount, rate, monthly):
     month = 0
     year = 0
-    while amount > 0:
+    do:
         amount = amount - monthly
         print()
         monthly = monthly * (rate / 100 / 12)
