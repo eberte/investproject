@@ -9,7 +9,6 @@ def comparePayoffs(amount, rate, monthly):
         if month == 12:
             year = year + 1
             month = 0
-        print(amount)
     if amount <= 0:
         return(year, month)
 
