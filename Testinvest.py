@@ -16,7 +16,8 @@ def comparePayoffs(amount, rate, monthly1, monthly2):
         if month2 == 12:
             year2 = year2 + 1
             month2 = 0
-    return [(year1, month1), (year2, month2)]
+    print('If you pay %g per month, the reypament period will be %g years and %g months.' % (monthly1, year1, month1))
+    print('If you pay %g per month, the reypament period will be %g years and %g months.' % (monthly2, year2, month2))
 
 
-print(comparePayoffs(60000, 5, 500, 750))
+comparePayoffs(60000, 5, 500, 750)
