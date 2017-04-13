@@ -1,3 +1,6 @@
+import matplotlib.pyplot as pyplot
+
+
 def comparePayoffs(amount, rate, monthly1, monthly2):
     amount2 = amount
     month1 = 0
@@ -31,6 +34,10 @@ def comparePayoffs(amount, rate, monthly1, monthly2):
     print('If you pay %g per month, the reypament period will be %g years and %g months.' % (monthly1, year1, month1))
     print('If you pay %g per month, the reypament period will be %g years and %g months.' % (monthly2, year2, month2))
     print('If you pay %g more per month, the repayment period will be %g years and %g months shorter.' % (monthly3, year3, month3))
+    pyplot.plot(range(int(year1 / rate)), amount)
+    pyplot.xlabel('Years')
+    pyplot.ylabel('Amount Balance ($)')
+    pyplot.show()
 
 
 comparePayoffs(60000, 5, 500, 750)
