@@ -35,14 +35,18 @@ def comparePayoffs(amount, rate, monthly1, monthly2):
         monthly3 = monthly1 - monthly2
     else:
         monthly3 = monthly2 - monthly1
-    print('If you pay %g per month, the reypament period will be %g years and %g months.' % (monthly1, year1, month1))
-    print('If you pay %g per month, the reypament period will be %g years and %g months.' % (monthly2, year2, month2))
-    print('If you pay %g more per month, the repayment period will be %g years and %g months shorter.' % (monthly3, year3, month3))
+    print('If you pay %g per month, the reypament period will be %g years and \
+          %g months.' % (monthly1, year1, month1))
+    print('If you pay %g per month, the reypament period will be %g years and \
+          %g months.' % (monthly2, year2, month2))
+    print('If you pay %g more per month, the repayment period will be %g years \
+          and %g months shorter.' % (monthly3, year3, month3))
+    print(len(range(year1)))
     print(len(AmountList1))
     print(len(AmountList2))
-    pyplot.plot(range(), AmountList1)
-    pyplot.plot(range(int(amount2)), AmountList2)
-    pyplot.xlabel('Years')
+    pyplot.plot(range(len(AmountList1)), AmountList1)
+    pyplot.plot(range(len(AmountList2)), AmountList2)
+    pyplot.xlabel('Months')
     pyplot.ylabel('Amount Balance ($)')
     pyplot.show()
 
