@@ -11,6 +11,21 @@ monthly2 = input("another monthly investment ammount")
 
 def compareInvestments(initial, currentAge, retireAge,
                        rate, monthly1, monthly2):
+    """
+    Description: A function that calculates the return of a retirement
+    investment.
+
+    Parameters:
+        initial - The ammount of money the person already has in their account
+        currentAge
+        retireAge
+        rate - the interest on the ammount - float
+        monthly1
+        monthly2
+
+    Return: The final amount in the "bank account" compared, but monthly
+    investments.
+    """
     monthlyRate = rate/100/12
     monthsRunning = (retireAge - currentAge)*12
     amount1 = monthly1 + (initial*(1 + monthlyRate))
