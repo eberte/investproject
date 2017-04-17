@@ -2,6 +2,17 @@ import matplotlib.pyplot as pyplot
 
 
 def comparePayoffs(amount, rate, monthly1, monthly2):
+    '''
+    Description: This function takes the amount of money a person owes for
+    college loans, its interest rate, and the two monthly rates of payoff
+    to compare.
+
+    Parameters: amount, rate, monthly1, monthly2 - float
+
+    Return: Three lines describing the amount of time it takes to payoff the
+    loans with each monthly option, which one is better and by how much, and a
+    line graph showing the two options.
+    '''
     # Sets up the lists and counters
     amount2 = amount
     month1 = 0
