@@ -49,6 +49,3 @@ def comparePayoffs(amount, rate, monthly1, monthly2):
     pyplot.xlabel('Months')
     pyplot.ylabel('Amount Balance ($)')
     pyplot.show()
-
-
-comparePayoffs(60000, 5, 500, 750)
