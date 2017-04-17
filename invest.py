@@ -17,24 +17,24 @@ def compareInvestments(initial, currentAge, retireAge,
     amount2 = monthly2 + (initial*(1 + monthlyRate))
     amountList1 = []
     amountList2 = []
-    amount1 = initAmount1
-    amount2 = initAmount2
-    amountList1.append(initAmount1)
-    amountList2.append(initAmount2)
-
+    amountList1.append(amount1)
+    amountList2.append(amount2)
     for i in range(monthsRunning):
-        amount1 = monthly1 + [(1 + monthlyRate)*(amount)]
-        amount2 = monthly2 + [(1 + monthlyRate)*(amount)]
+        amount1 = monthly1 + ((1 + monthlyRate)*(amount1))
+        amount2 = monthly2 + ((1 + monthlyRate)*(amount2))
         amountList1.append(amount1)
         amountList2.append(amount2)
     # The plot
-    pyplot.plot((range(monthsRunning), amountList1),
-                (range(monthsRunning), amountList2))
-    pyplot.xlabel("Age(years)")
-    pyplot.ylabel("Account balance($)")
+    pyplot.plot(range(monthsRunning + 1), amountList1)
+    pyplot.plot(range(monthsRunning + 1), amountList2)
+    pyplot.xlabel("Age")
+    pyplot.ylabel("Account balance")
     pyplot.show()
     # The return paragraph
-    return ("The final balance from investing %g per month: %g"
-            % (monthly1, amount1))
-    return ("The final balance from investing %g per month: %g"
-            % (monthly2, amount2))
+    return ("The final balance from investing %g per month: %g. The final balance from investing %g per month: %g"
+            % (monthly1, amount1, monthly2, amount2))
+
+
+string = compareInvestments(int(initial), int(currentAge), int(retireAge),
+                            float(rate), int(monthly1), int(monthly2))
+print(string)
