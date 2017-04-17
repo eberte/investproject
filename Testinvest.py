@@ -2,6 +2,7 @@ import matplotlib.pyplot as pyplot
 
 
 def comparePayoffs(amount, rate, monthly1, monthly2):
+    # Sets up the lists and counters
     amount2 = amount
     month1 = 0
     year1 = 0
@@ -9,6 +10,7 @@ def comparePayoffs(amount, rate, monthly1, monthly2):
     year2 = 0
     AmountList1 = []
     AmountList2 = []
+    # Calculates the years and months for the first monthly.
     while amount >= 0:
         AmountList1.append(amount)
         amount = amount * (1 + (rate / 100 / 12)) - monthly1
@@ -16,6 +18,7 @@ def comparePayoffs(amount, rate, monthly1, monthly2):
         if month1 == 12:
             year1 = year1 + 1
             month1 = 0
+    # Calculates the years and months for the second monthly/
     while amount2 >= 0:
         AmountList2.append(amount2)
         amount2 = amount2 * (1 + (rate / 100 / 12)) - monthly2
@@ -23,6 +26,7 @@ def comparePayoffs(amount, rate, monthly1, monthly2):
         if month2 == 12:
             year2 = year2 + 1
             month2 = 0
+    # Creates the three difference results.
     if year1 > year2:
         year3 = year1 - year2
     else:
@@ -35,15 +39,14 @@ def comparePayoffs(amount, rate, monthly1, monthly2):
         monthly3 = monthly1 - monthly2
     else:
         monthly3 = monthly2 - monthly1
+    # Prints the results of the function
     print('If you pay %g per month, the reypament period will be %g years and \
           %g months.' % (monthly1, year1, month1))
     print('If you pay %g per month, the reypament period will be %g years and \
           %g months.' % (monthly2, year2, month2))
     print('If you pay %g more per month, the repayment period will be %g years \
           and %g months shorter.' % (monthly3, year3, month3))
-    print(len(range(year1)))
-    print(len(AmountList1))
-    print(len(AmountList2))
+    # Creates and prints the line graph.
     pyplot.plot(range(len(AmountList1)), AmountList1)
     pyplot.plot(range(len(AmountList2)), AmountList2)
     pyplot.xlabel('Months')
