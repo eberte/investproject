@@ -23,7 +23,7 @@ def compareInvestments(initial, currentAge, retireAge,
         monthly1
         monthly2
 
-    Return: The final amount in the "bank account" compared, but monthly
+    Return: The final amount in the "bank account" compared, by monthly
     investments.
     """
     monthlyRate = rate/100/12
